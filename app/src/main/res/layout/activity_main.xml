@@ -30,24 +30,40 @@
 
         <Button
             android:id="@+id/draw_btn"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:contentDescription="@string/brush"
-            android:text="Brush"/>
+            android:text="Brush Size"
+            android:singleLine="true"
+            android:textSize="12sp"/>
+
+        <Button
+            android:id="@+id/opacity_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:contentDescription="opacity"
+            android:text="Opacity"
+            android:singleLine="true"
+            android:textSize="12sp"/>
 
         <Button
             android:id="@+id/erase_btn"
-            android:layout_width="80dp"
+            android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:contentDescription="@string/erase"
-            android:text="Eraser"/>
+            android:text="Eraser"
+            android:singleLine="true"
+            android:textSize="12sp"/>
 
         <Button
-            android:id="@+id/save_btn"
-            android:layout_width="80dp"
+            android:id="@+id/clear_btn"
+            android:layout_width="wrap_content"
             android:layout_height="fill_parent"
-            android:contentDescription="@string/save"
-            android:text="Save"/>
+            android:contentDescription="Clear"
+            android:text="Clear"
+            android:singleLine="true"
+            android:textSize="12sp"/>
     </LinearLayout>
 
     <!-- Color Palette -->
