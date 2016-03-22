@@ -8,6 +8,9 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.util.TypedValue;
 
 /**
  * Created by Brent Wang on 3/9/2016.
@@ -17,6 +20,7 @@ public class DoodleView extends View {
     private Paint _paintDoodle = new Paint();
     private Path _path = new Path();
     private int paintColor;
+    private float brushSize, lastBrushSize;
 
     public DoodleView(Context context) {
         super(context);
@@ -34,9 +38,28 @@ public class DoodleView extends View {
     }
 
     private void init(AttributeSet attrs, int defStyle) {
+        brushSize = getResources().getInteger(R.integer.medium_size);
+        lastBrushSize = brushSize;
+
         _paintDoodle.setColor(Color.RED);
         _paintDoodle.setAntiAlias(true);
         _paintDoodle.setStyle(Paint.Style.STROKE);
+        _paintDoodle.setStrokeWidth(brushSize);
+    }
+
+    public void setBrushSize(float newSize){
+        float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP,
+                newSize, getResources().getDisplayMetrics());
+        brushSize=pixelAmount;
+        _paintDoodle.setStrokeWidth(brushSize);
+    }
+
+    public void setLastBrushSize(float lastSize){
+        lastBrushSize=lastSize;
+    }
+
+    public float getLastBrushSize(){
+        return lastBrushSize;
     }
 
     public void setColor(String newColor){

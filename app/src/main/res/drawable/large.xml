@@ -1,0 +1,12 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.brentwang.cmsc434doodler"
+    android:dither="true"
+    android:shape="oval" >
+
+    <size
+        android:height="@dimen/large_brush"
+        android:width="@dimen/large_brush" />
+
+    <solid android:color="#FF666666" />
+
+</shape>
