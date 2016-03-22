@@ -16,6 +16,7 @@ public class DoodleView extends View {
 
     private Paint _paintDoodle = new Paint();
     private Path _path = new Path();
+    private int paintColor;
 
     public DoodleView(Context context) {
         super(context);
@@ -36,6 +37,13 @@ public class DoodleView extends View {
         _paintDoodle.setColor(Color.RED);
         _paintDoodle.setAntiAlias(true);
         _paintDoodle.setStyle(Paint.Style.STROKE);
+    }
+
+    public void setColor(String newColor){
+        //set color
+        invalidate();
+        paintColor = Color.parseColor(newColor);
+        _paintDoodle.setColor(paintColor);
     }
 
     @Override
